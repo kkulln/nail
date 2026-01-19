@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Reservation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #e6ded4;
+      color: #5a4a42;
+    }
+
+    .container {
+      max-width: 480px;
+      background-color: #fff;
+      margin: 40px auto;
+      padding: 24px;
+      border-radius: 12px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-size: 14px;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      border-radius: 30px;
+      border: none;
+      background-color: #b9a89a;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 予約画面 -->
+  <div class="container">
+    <h1>Reservation</h1>
+
+    <form>
+      <!-- メニュー（自動選択される） -->
+      <div>
+        <label>メニュー</label><br>
+        <select id="menu" required>
+          <option value="">選択してください</option>
+          <option value="foot">FOOT NAIL</option>
+          <option value="gel">GEL NAIL</option>
+          <option value="christmas">CHRISTMAS NAIL</option>
+        </select>
+      </div>
+
+      <div>
+        <label>お名前</label><br>
+        <input type="text" required>
+      </div>
+
+      <div>
+        <label>メールアドレス</label><br>
+        <input type="email" required>
+      </div>
+
+      <div>
+        <label>希望日</label><br>
+        <input type="date" required>
+      </div>
+
+      <div>
+        <label>希望時間</label><br>
+        <input type="time" required>
+      </div>
+
+      <button type="submit">予約する</button>
+    </form>
+  </div>
+
+  <!-- メニュー自動選択 -->
+  <script>
+    const params = new URLSearchParams(location.search);
+    const menu = params.get("menu");
+    if (menu) {
+      document.getElementById("menu").value = menu;
+    }
+  </script>
+
+</body>
+</html>
