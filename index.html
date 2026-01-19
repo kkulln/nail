@@ -11,16 +11,29 @@
       font-family: serif;
       background-color: #e6ded4;
       color: #5a4a42;
+    }
+
+    /* トップ画像エリア */
+    .hero {
+      position: relative;
       text-align: center;
     }
 
-    header {
-      padding: 80px 20px;
-      background: #efe8df;
+    .hero img {
+      width: 100%;
+      height: 70vh;
+      object-fit: cover;
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
     h1 {
-      font-size: 40px;
+      font-size: 36px;
       margin-bottom: 10px;
     }
 
@@ -33,8 +46,10 @@
       cursor: pointer;
     }
 
+    /* メニュー */
     .menu {
       padding: 60px 20px;
+      text-align: center;
     }
 
     .menu-list {
@@ -44,49 +59,67 @@
       flex-wrap: wrap;
     }
 
-    .menu-btn {
-      padding: 10px 22px;
+    .menu-item img {
+      width: 200px;
+      border-radius: 12px;
+    }
+
+    .menu-item button {
+      margin-top: 10px;
+      padding: 8px 20px;
       border-radius: 20px;
       border: none;
-      background-color: #fff;
+      background: #fff;
       cursor: pointer;
     }
 
     a {
       text-decoration: none;
+      color: inherit;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- トップ（スクリーンショットの画面） -->
-  <header>
-    <h1>Nail et moi</h1>
-    <p>Your own kind of special.</p>
+  <!-- トップ画像 -->
+  <div class="hero">
+    <img src="images/hero.jpg" alt="ネイルサロン">
+    <div class="hero-text">
+      <h1>Nail et moi</h1>
+      <p>Your own kind of special.</p>
 
-    <!-- BOOK NOW → 予約画面へ -->
-    <a href="reservation.html">
-      <button class="btn">BOOK NOW</button>
-    </a>
-  </header>
+      <a href="reservation.html">
+        <button class="btn">BOOK NOW</button>
+      </a>
+    </div>
+  </div>
 
   <!-- メニュー -->
   <section class="menu">
     <h2>Ask Menu List</h2>
 
     <div class="menu-list">
-      <a href="reservation.html?menu=foot">
-        <button class="menu-btn">FOOT NAIL</button>
-      </a>
+      <div class="menu-item">
+        <img src="images/foot.jpg">
+        <a href="reservation.html?menu=foot">
+          <button>FOOT NAIL</button>
+        </a>
+      </div>
 
-      <a href="reservation.html?menu=gel">
-        <button class="menu-btn">GEL NAIL</button>
-      </a>
+      <div class="menu-item">
+        <img src="images/gel.jpg">
+        <a href="reservation.html?menu=gel">
+          <button>GEL NAIL</button>
+        </a>
+      </div>
 
-      <a href="reservation.html?menu=christmas">
-        <button class="menu-btn">CHRISTMAS NAIL</button>
-      </a>
+      <div class="menu-item">
+        <img src="images/christmas.jpg">
+        <a href="reservation.html?menu=christmas">
+          <button>CHRISTMAS NAIL</button>
+        </a>
+      </div>
     </div>
   </section>
 
